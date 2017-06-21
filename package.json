@@ -1,0 +1,25 @@
+{
+  "name": "bh-scraper",
+  "version": "0.1.0",
+  "description": "Scrapes BH Photo video for lens focal length and depth of field.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deliastephens/bh-scraper.git"
+  },
+  "keywords": [
+    "camera",
+    "photo",
+    "video",
+    "lens"
+  ],
+  "author": "Delia Stephens",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deliastephens/bh-scraper/issues"
+  },
+  "homepage": "https://github.com/deliastephens/bh-scraper#readme"
+}
