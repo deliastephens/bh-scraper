@@ -8,14 +8,19 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-This project uses [jest](https://facebook.github.io/jest/)
-for testing:
+* [Jest](https://facebook.github.io/jest/)
+* [Cheerio](https://www.npmjs.com/package/cheerio)
+* [SuperAgent](https://www.npmjs.com/package/superagent)
+* [FocalLength](https://www.npmjs.com/package/focal-length)
 
 ```
-npm i --save jest
+npm install jest
+npm install cheerio
+npm install superagent
 ```
 
 ### Installing
+To install as a dependency for your npm project:
 ```
 npm i --save bh-scraper
 ```

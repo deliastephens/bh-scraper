@@ -57,9 +57,8 @@ getLengths = function(html) {
 }
 
 exports.scrapeSite = function(url, cropFactor) {
-  var lengths =
-    loadHTML(url)
-      .then(getLengths)
-      .then(fulfilled => findNewFocalLengths(cropFactor, fulfilled))
-      .catch(error => console.log(error.message));
+  loadHTML(url)
+    .then(getLengths)
+    .then(fulfilled => findNewFocalLengths(cropFactor, fulfilled))
+    .catch(error => console.log(error.message));
 }

@@ -24,6 +24,7 @@
   "homepage": "https://github.com/deliastephens/bh-scraper#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.1",
+    "focal-length": "^1.0.2",
     "jest": "^20.0.4",
     "superagent": "^3.5.2"
   }
