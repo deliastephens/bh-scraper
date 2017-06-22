@@ -1,7 +1,10 @@
 const request = require('superagent');
 const cheerio = require('cheerio');
+const focalLength = require('focal-length');
+
 var lengths = [];
 
+const TEST_CROP_FACTOR = 1.5
 const TEST_URL = 'https://www.bhphotovideo.com/c/product/1222774-REG/sony_sel2470gm_fe_24_70mm_f_2_8_gm.html'
 
 findFocalLengths = function(name) {
@@ -31,15 +34,32 @@ loadHTML = function(url) {
   )
 }
 
+findNewFocalLengths = function(cropFactor, focalLengths) {
+  console.log(focalLengths);
+  if(focalLengths.length === 1){
+    console.log(
+      focalLength.calcNewFocalLength(cropFactor, focalLengths[0])
+    );
+  } else {
+    for(let i = 0; i < focalLengths.length; i++) {
+      console.log(
+        focalLength.calcNewFocalLength(cropFactor, focalLengths[i])
+      );
+    }
+  }
+
+}
+
 getLengths = function(html) {
   const name = html("*[itemprop='name']").text().trim();
   lengths = findFocalLengths(name);
   return Promise.resolve(lengths);
 }
 
-exports.scrapeSite = function(url) {
-  loadHTML(url)
-    .then(getLengths)
-    .then(fulfilled => console.log(fulfilled))
-    .catch(error => console.log(error.message));
+exports.scrapeSite = function(url, cropFactor) {
+  var lengths =
+    loadHTML(url)
+      .then(getLengths)
+      .then(fulfilled => findNewFocalLengths(cropFactor, fulfilled))
+      .catch(error => console.log(error.message));
 }

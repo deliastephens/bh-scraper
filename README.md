@@ -1,6 +1,6 @@
-# Focal Length
+# B&H Scraper
 
-Scrapes [B&H website](https://www.bhphotovideo.com/), returning the focal length of specified lens as an array.
+Scrapes [B&H website](https://www.bhphotovideo.com/), returning the effective focal lengths of a lens.
 
 ## Getting Started
 
